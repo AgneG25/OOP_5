@@ -2,7 +2,7 @@
 
 void removeCharsFromString( string &str) {
 
-    char chars[] = "()-,./?~`!@#$^&*()_+][}{|:;–1234567890' ' ";
+    char chars[] = "()-,./?~`!@#$^&*()_+][}{|:;–' ' ";
     for (int i = 0; i < strlen(chars); ++i ) {
         str.erase( remove(str.begin(), str.end(), chars[i]), str.end() );
     }
@@ -27,7 +27,7 @@ void printFrequency() {
             if (std::regex_match (Word, std::regex("^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$") ))
                 url.insert(Word);
             else {
-                removeCharsFromString(Word);
+                removeCharsFromString(Word); 
                 findWords[Word]++;
                 lines.insert(std::pair<string, int>(Word, line));
             }
