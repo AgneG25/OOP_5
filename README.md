@@ -8,7 +8,7 @@ Norėdami pasileisti programą savo kompiuteryje, turite atsisiusti realise'ą i
 
 Atlikdama šią užduotį susipažinau su asociatyviaisiais konteineriais, savo programoje naudojau `std::map` ir `std::multimap` konteinerius.
 
-Programa skaičiuoja žodžius, kurie tekste pasikartojo daugiau nei vieną kartą ir išveda jų pasikartojimo kiekį bei eilutes, kuriose pasikartojo.
+Programa skaičiuoja žodžius, kurie tekste pasikartojo daugiau nei vieną kartą ir išveda jų pasikartojimo kiekį bei eilutes, kuriose pasikartojo. Patikrinama ar žodis prasideda didžiąja raide, jei taip, tuomen raidė paverčiama mažąja, nes kitaip žodžiai "miestas" ir "Miestas" būtų laikomi skirtingais.
 
 ### Rezultatų pavyzdys
 
