@@ -14,6 +14,7 @@
 #include <stdio.h> 
 #include <locale>
 #include <cctype>
+#include <iomanip>
 
 #define text "text.txt"
 
@@ -24,5 +25,6 @@ using std::multimap;
 void removeCharsFromString( string &str);
 void printFrequency();
 void checkLetter (string &word);
+void Recursion ();
 
 #endif //OOP_5_FUNCTIONS_H

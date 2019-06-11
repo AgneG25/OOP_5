@@ -13,7 +13,6 @@ void checkLetter (string &word) {
 }
 
 void printFrequency() {
-
     map<string, int> findWords;
     multimap<string, int> lines;
     string str;
@@ -41,16 +40,33 @@ void printFrequency() {
 
     map<string, int>::iterator it;
     multimap<string, int>::iterator it1;
+    
+    int max = 0;
     for(it = findWords.begin(); it != findWords.end(); it++) {
+        int m = 0;
         if (it->second > 1) {
-            rf << "Zodis: " << it->first << " tekste pasikartoja " << it->second << " kartus ";
-            for (it1 = lines.begin(); it1 != lines.end(); it1++)
+            for (it1 = lines.begin(); it1 != lines.end(); it1++){
+                if (it->first == it1->first){
+                    m = m + 1;
+                    if(m > max) m = max;
+                }
+            }
+        }
+    }
+
+    for (int i = 2; i < 100; i++){
+        for(it = findWords.begin(); it != findWords.end(); it++) {
+         if (it->second == i) {
+            rf << std::setw(13) << it->first << " tekste pasikartoja " << std::setw(10) << it->second  << " kartus ";
+                for (it1 = lines.begin(); it1 != lines.end(); it1++)
                 if (it->first == it1->first) {
                     rf << it1->second << " ";
-                }
+            }
             rf << " eilutese." << std::endl;
         }
     }
+    }
+    
 
     rf << "ULR adresai, rasti tekste: " << std::endl;
     for(std::set<std::string>::iterator it = url.begin(); it != url.end(); ++it)
